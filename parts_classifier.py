@@ -39,9 +39,8 @@ if uploaded_file is not None:
 
     # Rodando inferência
     st.subheader("Resultado da Classificação:")
-    results = model(img_array) 
-    # Visualizando com as detecções
-    annotated_frame = results[0].plot() 
+    
+    results = model(img_array)    
     # Exibindo predição da primeira detecção (posição 0)
     # Acessando resultados de classificação
     first_result = results[0]
