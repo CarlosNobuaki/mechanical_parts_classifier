@@ -1,0 +1,1 @@
+# mechanical_parts_classifier
