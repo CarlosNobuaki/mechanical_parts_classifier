@@ -12,7 +12,7 @@ uploaded_file = st.file_uploader("Envie uma imagem da peça - jpg, jpeg ou png",
 # Carrega o modelo .pt do YOLOv11
 @st.cache_resource
 def load_model():
-    model = YOLO("/home/carlos/workspace/synapse/mechanical_parts_classifier/mechanical_parts_classifier/models/mechanical_parts_best.pt")  # substitua pelo caminho correto do seu modelo
+    model = YOLO("models/mechanical_parts_best.pt")  # substitua pelo caminho correto do seu modelo
     return model
 
 model = load_model()
