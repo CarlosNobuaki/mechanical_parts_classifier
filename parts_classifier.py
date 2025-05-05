@@ -6,6 +6,9 @@ from ultralytics import YOLO
 # Título da aplicação
 st.title("Classificador de Peças")
 
+# Título da aplicação
+st.title("Classificador de Peças")
+
 # --- Links úteis ---
 st.markdown("---")
 st.subheader("Contatos")
@@ -18,15 +21,16 @@ st.markdown("""
 - [CIAG](https://www.ciag.org.br/#/)
 """)
 
-
-uploaded_model = st.file_uploader("Envie o modelo .pt", type=["pt"])
-if uploaded_model:
-    with open("models/temp_model.pt", "wb") as f:
-        f.write(uploaded_model.getbuffer())
-    model = YOLO("models/temp_model.pt")
-
 # Upload da imagem
 uploaded_file = st.file_uploader("Envie uma imagem da peça - jpg, jpeg ou png", type=["jpg", "jpeg", "png"])
+
+# Carrega o modelo .pt do YOLOv11
+@st.cache_resource
+def load_model():
+    model = YOLO("models/mechanical_parts_best.pt")  # substitua pelo caminho correto do seu modelo
+    return model
+
+model = load_model()
 
 # Processamento da imagem e inferência
 if uploaded_file is not None:
