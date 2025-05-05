@@ -5,6 +5,7 @@ from ultralytics import YOLO
 
 # Título da aplicação
 st.title("Classificador de Peças")
+
 # --- Links úteis ---
 st.markdown("---")
 st.subheader("Contatos")
