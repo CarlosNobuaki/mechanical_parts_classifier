@@ -48,11 +48,12 @@ if uploaded_file is not None:
 
     if probs is not None:
         confs = probs.data  # Tensor com as probabilidades
-        cls_id = int(np.argmax(confs))  # Índice da maior probabilidade
+        cls_id = int(np.argmax(confs.cpu().numpy()))  # Correção aqui
         conf = float(confs[cls_id])     # Valor da confiança
         label = first_result.names[cls_id]  # Nome da classe
         st.markdown(f"### 🔍 Predição principal: `{label}` com confiança `{conf:.2f}`")
     else:
         st.markdown("### ⚠️ Nenhuma predição foi retornada.")
+
 
 
