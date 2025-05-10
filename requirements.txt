@@ -1,11 +1,7 @@
 streamlit
-opencv-python-headless
 numpy
 pillow
 ultralytics
 torch
 opencv-python
-libglib2.0-0
-libsm6
-libxext6
-libxrender-dev
+
