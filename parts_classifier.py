@@ -3,8 +3,8 @@ import numpy as np
 from PIL import Image
 from ultralytics import YOLO
 
-# Título da aplicação
-st.title("Classificador de Peças")
+st.image("/home/carlos/workspace/synapse/mechanical_parts_classifier/mechanical_parts_classifier/img/Captura de tela de 2025-05-11 20-33-07.png", use_container_width=True)# Título da aplicação
+st.title("Agroamerica classificador de Peças")
 
 # --- Links úteis ---
 st.markdown("---")
