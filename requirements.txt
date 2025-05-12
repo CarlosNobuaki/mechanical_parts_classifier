@@ -5,3 +5,4 @@ sentence-transformers==2.7.0
 scikit-learn
 numpy
 pandas
+ultralytics>=8.0.142
