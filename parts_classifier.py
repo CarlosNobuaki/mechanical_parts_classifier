@@ -5,7 +5,7 @@ from ultralytics import YOLO
 
 st.image("/home/carlos/workspace/synapse/mechanical_parts_classifier/mechanical_parts_classifier/img/Captura de tela de 2025-05-11 20-33-07.png", use_container_width=True)# Título da aplicação
 st.title("Agroamerica classificador de Peças")
-
+#--- Descrição da aplicação
 # --- Links úteis ---
 st.markdown("---")
 st.subheader("Contatos")
