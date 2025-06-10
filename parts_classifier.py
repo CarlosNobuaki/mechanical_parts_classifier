@@ -18,9 +18,7 @@ st.markdown("""
 - [CIAG](https://www.ciag.org.br/#/)
 """)
 
-# Upload da imagem
-#uploaded_file = '/home/carlos/workspace/synapse/mechanical_parts_classifier/mechanical_parts_classifier/img/Captura de tela de 2025-05-11 20-33-07.png'
-uploaded_file = st.file_uploader("Envie uma imagem da peça - jpg, jpeg ou png", type=["jpg", "jpeg", "png"])
+
 # Carrega o modelo .pt do YOLOv11
 @st.cache_resource
 def load_model():
