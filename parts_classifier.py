@@ -58,8 +58,8 @@ if uploaded_file is not None:
             label = model.names[cls_id]
             st.markdown(f"### 🔍 Detecção: `{label}` com confiança `{conf:.2f}`")
 
-            # Alerta se a confiança estiver abaixo de 50%
-            if conf < 0.5:
+            # Alerta se a confiança estiver abaixo de 60%
+            if conf < 0.6:
                 st.warning("⚠️ Peça com algum tipo de diferença ou baixa confiança na detecção!")
 
             # Exibe informações da peça, se existir no "banco"
@@ -80,57 +80,3 @@ if uploaded_file is not None:
         st.image(annotated_image, caption="Resultado com detecções", use_container_width=True)
     else:
         st.markdown("### ⚠️ Nenhuma detecção encontrada.")
-
-
-
-# # Processamento da imagem e inferência
-# if uploaded_file is not None:
-#     image = Image.open(uploaded_file).convert("RGB")
-#     print(f"Imagem carregada: {image}")
-#     st.image(image, caption="Imagem enviada", use_container_width=True)
-
-#     # Convertendo para array
-#     img_array = np.array(image)
-
-#     # Rodando inferência
-#     st.subheader("Resultado da Classificação:")
-    
-#     results = model(img_array)  
-#     print(f"Resultados da inferência: {results}")  
-#     # Exibindo predição da primeira detecção (posição 0)
-#     # Acessando resultados de classificação
-#     first_result = results[0]
-#     # probs = first_result.probs
-#     print(f"Resultados da primeira detecção: {first_result}")
-#     # print(f"Probabilidades: {probs}")
-    
-    
-#     ###################################################################################################################
-
-#     boxes = first_result.boxes
-#     print(f"Caixas detectadas: {boxes}")
-#     if boxes is not None and len(boxes) > 0:
-#         for box in boxes:
-#             cls_id = int(box.cls[0].cpu().numpy())
-#             conf = float(box.conf[0].cpu().numpy())
-#             label = model.names[cls_id]
-#             print(f"ID da classe detectada: {cls_id}")
-#             st.markdown(f"### 🔍 Detecção: `{label}` com confiança `{conf:.2f}`")
-#     else:
-#         st.markdown("### ⚠️ Nenhuma detecção encontrada.")
-#         print("Nenhuma detecção encontrada.")
-###################################################################################################################
-    # if probs is not None:
-    #     confs = probs.data 
-    #     cls_id = int(np.argmax(confs.cpu().numpy())) 
-    #     print(f"ID da classe detectada: {cls_id}")
-    #     conf = float(confs[cls_id]) 
-    #     print(f"ID da classe: {cls_id}, Confiança: {conf}")
-    #     label = first_result.names[cls_id] 
-    #     print(f"Classe detectada: {label}, Confiança: {conf}")
-    #     st.markdown(f"### 🔍 Predição principal: `{label}` com confiança `{conf:.2f}`")
-    # else:
-    #     st.markdown("### ⚠️ Nenhuma predição foi retornada.")
-    #     print("Nenhuma predição retornada.")
-
-
