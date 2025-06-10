@@ -21,16 +21,13 @@ st.markdown("""
 # Upload da imagem
 #uploaded_file = '/home/carlos/workspace/synapse/mechanical_parts_classifier/mechanical_parts_classifier/img/Captura de tela de 2025-05-11 20-33-07.png'
 uploaded_file = st.file_uploader("Envie uma imagem da peça - jpg, jpeg ou png", type=["jpg", "jpeg", "png"])
-print(f"Arquivo enviado: {uploaded_file}")
 # Carrega o modelo .pt do YOLOv11
 @st.cache_resource
 def load_model():
-    model = YOLO("/home/carlos/workspace/synapse/mechanical_parts_classifier/mechanical_parts_classifier/models/agromerica_train/weights/best.pt")  # substitua pelo caminho correto do seu modelo
+    model = YOLO("models/best.pt")  # substitua pelo caminho correto do seu modelo
     return model
 
 model = load_model()
-print(f"Modelo carregado com sucesso!{model.names}")
-
 uploaded_file = st.file_uploader("Envie uma imagem da peça", type=["jpg", "jpeg", "png"])
 
 
